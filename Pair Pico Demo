@@ -13,10 +13,10 @@ uart = UART(1, 9600, tx=Pin(8), rx=Pin(9))
 uart.init(9600, bits=8, parity=None, stop=1)
 
 #esablishes pwm output on pico a 
-pwm_pin = machine.Pin(8)  
-pwm = machine.PWM(pwm_pin)  
-pwm.freq(1000)                                                                        # Set PWM frequency to be sent to Pico B, on pin 8
-pwm.duty(512)                                                                         #1023 = 100% so 512 = 50%
+p8 = machine.Pin(8)
+pwm8 = machine.PWM(p8)
+pwm8.freq(1000)                                                                          # Set PWM frequency to be sent to Pico B, on pin 8
+pwm8.duty(512)  
 
 #initialize reciever on pico b 8=tx, reciever pin
 pwm_reciever = machine.PWM(Pin(8))
