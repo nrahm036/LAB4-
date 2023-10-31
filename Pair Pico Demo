@@ -55,3 +55,4 @@ while True:
             uart.write("Received and Processed: {:.2f}%".format(calculated_pwm_value))  
             #sends response back to pico a, includes measured pwm value
             
+# example changes
