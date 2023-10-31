@@ -16,8 +16,10 @@ uart.init(9600, bits=8, parity=None, stop=1)
 p8 = machine.Pin(8)
 pwm8 = machine.PWM(p8)
 print(type(pwm8))
-pwm8.freq(1000)                                                                          # Set PWM frequency to be sent to Pico B, on pin 8
-pwm8.duty_u16(32768)                                                                      #1023 = 100% so 512 = 50%
+# Set PWM frequency to be sent to Pico B, on pin 8
+pwm8.freq(1000) 
+#1023 = 100% so 512 = 50%
+pwm8.duty_u16(32768)                                                                      
 
 #initialize reciever on pico b 8=tx, reciever pin
 pwm_reciever = machine.PWM(Pin(8))
@@ -54,4 +56,3 @@ while True:
             print ("the difference in pwm value was:{:.2F}%" .format(difference))
             uart.write("Received and Processed: {:.2f}%".format(calculated_pwm_value))  
             #sends response back to pico a, includes measured pwm value
-            
